@@ -59,7 +59,7 @@ const Index = () => {
 
         {/* Footer */}
         <footer className="text-center mt-16 text-muted-foreground text-sm">
-          <p>© 2024 FaceID - Todos os direitos reservados</p>
+          <p>© 2026 Unevensistemas - Todos os direitos reservados</p>
         </footer>
       </div>
     </div>
