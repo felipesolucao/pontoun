@@ -1,4 +1,4 @@
-# Welcome to your Lovable project
+# Pontoun
 
 ## Project info
 
@@ -60,9 +60,25 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+## Deploy no Railway pelo GitHub
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+O projeto inclui um `Dockerfile` e um `railway.json`, portanto o Railway detecta a
+configuração de build automaticamente. O Nginx serve a aplicação e redireciona
+rotas do React para `index.html`.
+
+1. Envie esta branch para o repositório `pontoun` no GitHub.
+2. No [Railway](https://railway.com/new), escolha **Deploy from GitHub repo** e
+   autorize o acesso ao repositório `pontoun`.
+3. No serviço criado, abra **Variables** e cadastre:
+   - `VITE_SUPABASE_URL`
+   - `VITE_SUPABASE_PUBLISHABLE_KEY`
+4. Inicie (ou refaça) o deploy. As variáveis `VITE_*` são incorporadas ao bundle
+   durante o build, então qualquer alteração nelas exige um novo deploy.
+5. Em **Settings > Networking**, clique em **Generate Domain** para publicar o
+   endereço da aplicação.
+
+O Railway fará novos deploys automaticamente quando houver commits na branch
+conectada. O endpoint `/healthz` é usado para verificar a saúde do container.
 
 ## Can I connect a custom domain to my Lovable project?
 
